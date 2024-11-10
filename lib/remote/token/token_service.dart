@@ -18,16 +18,23 @@ class TokenService implements ITokenService {
   Future<String?> getRefreshToken() => _secureStorage.read(refreshTokenKey);
 
   @override
-  Future<void> storeAccessToken(String accessToken, String refreshToken) async {
+  Future<String?> getIdentityToken() => _secureStorage.read(identityTokenKey);
+
+  @override
+  Future<void> storeAccessToken(String accessToken, String refreshToken, String identityToken) async {
     await _secureStorage.write(accessTokenKey, accessToken);
     await _secureStorage.write(refreshTokenKey, refreshToken);
+    await _secureStorage.write(identityTokenKey, identityToken);
   }
 
   @override
   Future<void> clearTokens() async {
     await _secureStorage.delete(accessTokenKey);
     await _secureStorage.delete(refreshTokenKey);
+    await _secureStorage.delete(identityTokenKey);
   }
+
+
 
   // @override
   // Future<RefreshTokenResponse> refreshToken(String? refreshToken) async {

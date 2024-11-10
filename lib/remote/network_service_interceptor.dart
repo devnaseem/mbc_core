@@ -19,10 +19,12 @@ class NetworkServiceInterceptor extends Interceptor {
   ) async {
     // Get access token
     final accessToken = await _tokenService.getAccessToken();
+    final identityToken = await _tokenService.getIdentityToken();
 
     options.headers['Accept'] = 'application/json';
     options.headers['Accept-Language'] = 'en';
     options.headers['Authorization'] = 'Bearer $accessToken';
+    options.headers['identity'] = 'Identity $identityToken';
 
     super.onRequest(options, handler);
   }
