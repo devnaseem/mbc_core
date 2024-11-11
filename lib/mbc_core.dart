@@ -10,7 +10,7 @@ part 'env/env_reader.dart';
 part 'flavor/flavor.dart';
 
 part 'providers/flavor_provider.dart';
-
+part 'providers/system_provider.dart';
 
 part 'remote/network_service.dart';
 part 'remote/network_service_interceptor.dart';

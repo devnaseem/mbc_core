@@ -2,7 +2,6 @@ part of mbc_core;
 
 final envReaderProvider = Provider<EnvReader>((ref) {
   final flavor = ref.watch(flavorProvider);
-
   return EnvReader(flavor);
 });
 
