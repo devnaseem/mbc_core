@@ -15,7 +15,12 @@ final networkServiceProvider = Provider<Dio>((ref) {
       ref.watch(networkServiceInterceptorProvider(dio));
 
   dio.interceptors.addAll([
-    HttpFormatter(),
+    LogInterceptor(
+      request: true,
+      requestHeader: true,
+      responseBody: true,
+      error: true,
+    ),
     networkServiceInterceptor,
   ]);
 

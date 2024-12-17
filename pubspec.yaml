@@ -11,9 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
   mbc_common:
-    git:
-      url: https://github.com/devnaseem/mbc_common.git
-      ref: d4611c7fe3ba1971416246d650b81b280aeaa4db
+    path: ../mbc_common
+#    git:
+#      url: https://github.com/devnaseem/mbc_common.git
+#      ref: d4611c7fe3ba1971416246d650b81b280aeaa4db
 dev_dependencies:
   flutter_test:
     sdk: flutter
